@@ -10,7 +10,7 @@ class LostView {
   LostView(this.game) {
     rect = Rect.fromLTWH(
       game.tileSize,
-      (game.screenSize.height / 2) - (game.tileSize * 5),
+      (game.screenSize.height / 2) - (game.tileSize * 3),
       game.tileSize * 7,
       game.tileSize * 5,
     );

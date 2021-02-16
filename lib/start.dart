@@ -9,12 +9,19 @@ class StartButton {
   Sprite sprite;
 
   StartButton(this.game) {
-    rect = Rect.fromLTWH(
-      game.tileSize * 1.5,
-      (game.screenSize.height * .75) - (game.tileSize * 1.5),
-      game.tileSize * 6,
-      game.tileSize * 3,
-    );
+    rect = this.game.activeView == View.home
+        ? Rect.fromLTWH(
+            game.tileSize * 1.5,
+            (game.screenSize.height / 2),
+            game.tileSize * 6,
+            game.tileSize * 3,
+          )
+        : Rect.fromLTWH(
+            game.tileSize * 1.5,
+            (game.screenSize.height * .75) - (game.tileSize * 1.5),
+            game.tileSize * 6,
+            game.tileSize * 3,
+          );
     sprite = Sprite('ui/start-button.png');
   }
 

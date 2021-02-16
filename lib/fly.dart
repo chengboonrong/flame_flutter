@@ -35,7 +35,9 @@ class Fly {
     if (isDead) {
       deadSprite.renderRect(c, flyRect.inflate(2));
     } else {
-      flyingSprite[flyingSpriteIndex.toInt()].renderRect(c, flyRect.inflate(2));
+      if (flyingSpriteIndex.toInt() <= flyingSprite.length - 1)
+        flyingSprite[flyingSpriteIndex.toInt()]
+            .renderRect(c, flyRect.inflate(2));
     }
   }
 
@@ -72,7 +74,7 @@ class Fly {
     if (!isDead) {
       // game.spawnFly();
       isDead = true;
-      flyPaint.color = Color(0xffff4757);
+      // flyPaint.color = Color(0xffff4757);
     }
   }
 }
